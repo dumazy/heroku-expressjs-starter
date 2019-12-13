@@ -16,9 +16,14 @@ module.exports = {
     module: {
         rules: [
             {
-                use: 'babel-loader',
+                test: /\.js$/,
                 exclude: /(node_modules)/,
-                test: /\.js$/
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ["@babel/preset-env"]
+                    }
+                }
             }
         ]
     }

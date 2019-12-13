@@ -4,7 +4,7 @@
   "description": "skeleton nodejs project with webpack for bundling and babel for transpiling",
   "main": "webpack.config.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --mode production",
     "start": "npm-run-all --parallel watch:server watch:build",
     "watch:build": "webpack --watch",
     "watch:server": "nodemon --inspect=\"9229\" \"./build/bundle.js\" --watch \"./build\" ",
@@ -13,14 +13,18 @@
   "author": "karim",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
+    "@babel/preset-env": "^7.7.6",
     "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
+    "babel-loader": "^8.0.6",
     "babel-preset-env": "^1.6.1",
     "dotenv-webpack": "^1.7.0",
     "nodemon": "^1.12.1",
     "npm-run-all": "^4.1.1",
     "regenerator-runtime": "^0.12.1",
-    "webpack": "^3.8.1"
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   },
   "dependencies": {
     "axios": "^0.19.0",
